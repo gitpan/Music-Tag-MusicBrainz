@@ -1,6 +1,5 @@
 package Music::Tag::MusicBrainz;
-our $VERSION = 0.28;
-our @AUTOPLUGIN = qw();
+our $VERSION = 0.29;
 
 # Copyright (c) 2006 Edward Allen III. Some rights reserved.
 #
@@ -105,6 +104,20 @@ sub default_options {
     };
 }
 
+=back
+
+=head1 METHODS
+
+=over 4
+
+=item get_tag
+
+Updates current tag object with information from MusicBrainz database.
+
+Same as $mbplugin->artist_info() && $mbplugin->album_info() && $mbplugin->track_info();
+
+=cut
+
 sub get_tag {
     my $self = shift;
     if ( ( $self->options->{skip_seen} ) && ( length( $self->info->mb_trackid ) == 36 ) ) {
@@ -116,6 +129,12 @@ sub get_tag {
     }
     return $self;
 }
+
+=item artist_info
+
+Update the tag object with information about the artist from MusicBrainz.
+
+=cut
 
 sub artist_info {
     my $self = shift;
@@ -219,6 +238,13 @@ sub artist_info {
     }
     return $self->info;
 }
+
+=item album_info
+
+Update the tag object with information about the album from MusicBrainz.
+
+=cut
+
 
 sub album_info {
     my $self = shift;
@@ -378,6 +404,13 @@ sub album_info {
     }
     return $self->info;
 }
+
+=item track_info
+
+Update the tag object with information about the track from MusicBrainz.
+
+=cut
+
 
 sub track_info {
     my $self = shift;
@@ -558,6 +591,10 @@ sub track_info {
         $self->tagchange("releasedate");
     }
 }
+
+=item default_options
+
+Returns hash of default options for plugin
 
 =back
 

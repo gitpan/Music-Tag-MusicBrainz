@@ -1,3 +1,11 @@
+Release Name: 0.29
+============================
+* Kwalitee / pod imporvments
+
+Release Name: 0.28
+============================
+* Split from Music::Tag
+
 Release Name: 0.27
 ============================
 * More documentation and tested POD. 
