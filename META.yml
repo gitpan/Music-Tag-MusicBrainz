@@ -1,15 +1,23 @@
 --- #YAML:1.0
-name:                Music-Tag-MusicBrainz
-version:             0.3
-abstract:            Plugin module for Music::Tag to get information from MusicBrainz database.
-license:             perl
-author:              
+name:               Music-Tag-MusicBrainz
+version:            0.4001
+abstract:           Plugin module for Music::Tag to get information from MusicBrainz database.
+author:
     - Edward Allen (ealleniii _at_ cpan _dot_ org)
-generated_by:        ExtUtils::MakeMaker version 6.42
-distribution_type:   module
-requires:     
-    Music::Tag:                    0.27
-    WebService::MusicBrainz:       0.07
+license:            perl
+distribution_type:  module
+configure_requires:
+    ExtUtils::MakeMaker:  0
+build_requires:
+    ExtUtils::MakeMaker:  0
+requires:
+    Music::Tag:           0.4001
+    WebService::MusicBrainz:  0.07
+no_index:
+    directory:
+        - t
+        - inc
+generated_by:       ExtUtils::MakeMaker version 6.56
 meta-spec:
-    url:     http://module-build.sourceforge.net/META-spec-v1.3.html
-    version: 1.3
+    url:      http://module-build.sourceforge.net/META-spec-v1.4.html
+    version:  1.4
